@@ -4,6 +4,7 @@
   "description": "Process orders and fees",
   "main": "index.js",
   "scripts": {
+    "fees": "node challenges/fees.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
