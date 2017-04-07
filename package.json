@@ -4,8 +4,8 @@
   "description": "Process orders and fees",
   "main": "index.js",
   "scripts": {
-    "fees": "node challenges/fees.js",
-    "distributions": "node challenges/distributions.js",
+    "fees": "node challenges/print.js fees",
+    "dist": "node challenges/distributions.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
