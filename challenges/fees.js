@@ -30,4 +30,16 @@ var calculateOrderTotalFee = orderItems => {
   return order;
 }
 
-console.log(calculateOrderItemTotalFee('Real Property Recording', 5));
+var printOrders = () => {
+  for (let order of orders) {
+    let orderItemFees = calculateOrderTotalFee(order.order_items);
+    console.log(`Order ID: ${order.order_number}`);
+    for (let orderItem of orderItemFees.itemFees) {
+      console.log(`\tOrder item ${orderItem.type}: ${orderItem.price}`);
+    }
+    console.log(`\tOrder total: ${orderItemFees.total}`);
+  }
+}
+
+printOrders();
+// console.log(calculateOrderItemTotalFee('Real Property Recording', 5));
