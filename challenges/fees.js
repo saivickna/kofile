@@ -30,16 +30,16 @@ var calculateOrderTotalFee = orderItems => {
   return order;
 }
 
+//Print all of the orders in the required format 
 var printOrders = () => {
   for (let order of orders) {
     let orderItemFees = calculateOrderTotalFee(order.order_items);
     console.log(`Order ID: ${order.order_number}`);
     for (let orderItem of orderItemFees.itemFees) {
-      console.log(`\tOrder item ${orderItem.type}: ${orderItem.price}`);
+      console.log(`   Order item ${orderItem.type}: $${orderItem.price.toFixed(2)}`);
     }
-    console.log(`\tOrder total: ${orderItemFees.total}`);
+    console.log(`   Order total: ${orderItemFees.total}`);
   }
 }
 
 printOrders();
-// console.log(calculateOrderItemTotalFee('Real Property Recording', 5));
