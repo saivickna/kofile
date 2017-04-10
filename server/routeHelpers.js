@@ -4,7 +4,7 @@ const dist = require('../lib/distributions');
 module.exports = {
   orderPrice: (req, res) => {
     let orders = req.body;
-    if (orders === undefined || !Array.isArray(orders)) res.status(400).send('Order List not provided.');
+    if (orders === undefined || !Array.isArray(orders)) return res.status(400).send('Order List not provided.');
     let priceOrders = [];
     try {
       for (let order of orders) {
@@ -15,14 +15,13 @@ module.exports = {
         priceOrders.push(priceOrder);
       }
     } catch (e) {
-      console.log(e);
-      res.status(500).send(e);
+      return res.status(500).send(e);
     }
-    res.status(200).send(JSON.stringify(priceOrders));
+    res.status(200).send(priceOrders);
   },
   orderDist: (req, res) => {
     let orders = req.body;
-    if (orders === undefined || !Array.isArray(orders)) res.status(400).send('Order List not provided.');
+    if (orders === undefined || !Array.isArray(orders)) return res.status(400).send('Order List not provided.');
     let distOrders = [];
     try {
       for (let order of orders) {
@@ -33,8 +32,8 @@ module.exports = {
         distOrders.push(distOrder);
       }
     } catch (e) {
-      res.status(500).send(e);
+      return res.status(500).send(e);
     }
-    res.status(200).send(JSON.stringify(distOrders));   
+    res.status(200).send(distOrders);   
   }
 }
