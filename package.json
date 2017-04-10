@@ -4,8 +4,9 @@
   "description": "Process orders and fees",
   "main": "index.js",
   "scripts": {
-    "fees": "node challenges/print.js fees",
-    "dist": "node challenges/print.js dist",
+    "start": "nodemon server/index.js",
+    "fees": "node lib/print.js fees",
+    "dist": "node lib/print.js dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

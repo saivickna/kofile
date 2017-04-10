@@ -1,5 +1,5 @@
-const fees = require('../challenges/fees');
-const dist = require('../challenges/distributions');
+const fees = require('../lib/fees');
+const dist = require('../lib/distributions');
 
 module.exports = {
   orderPrice: orders => {
